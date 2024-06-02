@@ -1,0 +1,28 @@
+.cotainer h3 {
+  color: var(--mainColor);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.cotainer p {
+  color: grey;
+}
+
+.createdAt {
+  margin-top: 100px;
+  display: flex;
+  background-color: var(--backgroundColor);
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.createdAt p {
+  margin: 0;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.createdAt span {
+  color: var(--mainColor);
+}

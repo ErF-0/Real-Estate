@@ -1,0 +1,20 @@
+.container h3 {
+  color: var(--mainColor);
+  font-size: 1.1rem;
+  font-weight: 400;
+  border-bottom: 2px solid silver;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.container p {
+  text-align: justify;
+  margin-bottom: 50px;
+}
+.container ul {
+  padding-right: 20px;
+  margin-bottom: 50px;
+}
+
+.container li::marker {
+  color: var(--mainColor);
+}

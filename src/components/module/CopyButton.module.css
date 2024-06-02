@@ -1,0 +1,7 @@
+#copyBtn {
+  cursor: pointer;
+}
+
+#copied svg {
+  color: var(--mainColor);
+}

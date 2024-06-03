@@ -1,42 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useReducer, useState } from "react";
+import { usePathname } from "next/navigation";
+import { getPathname } from "@/utils/getPathname";
 import styles from "@/layout/DashboardSidebar.module.css";
-import { usePathname, useRouter } from "next/navigation";
 
-const initialState = {
-  dashboard: true,
-  myProfiles: false,
-  addProfile: false,
-  admin: false,
-};
-const reducer = (state, action) => {
-  switch (action) {
-    case "DASHBOARD":
-      return initialState;
-    case "ADD_PROFILE":
-      return { ...initialState, dashboard: false, addProfile: true };
-    case "MY_PROFILES":
-      return { ...initialState, dashboard: false, myProfiles: true };
-
-    default:
-      return state;
-  }
-};
 const DashboardNavigation = ({ role }) => {
-  // const pathname = usePathname();
-  // const current = pathname.split("/dashboard/");
-  // const [path, setPath] = useState("");
-  // console.log(path);
+  const url = usePathname();
+  const pathname = getPathname(url);
 
-  // useEffect(() => {
-  //   console.log(pathname);
-  //   console.log(current);
-  //   setPath(current[1]);
-  // }, [path]);
-
-  const [style, dispatch] = useReducer(reducer, initialState);
-  const { dashboard, myProfiles, addProfile, admin } = style;
   return (
     <>
       <Link
@@ -44,7 +15,7 @@ const DashboardNavigation = ({ role }) => {
         onClick={() => {
           dispatch("DASHBOARD");
         }}
-        className={`${dashboard ? styles.active : null}`}
+        className={`${pathname === "dashboard" ? styles.active : null}`}
       >
         حساب کاربری
       </Link>
@@ -53,7 +24,7 @@ const DashboardNavigation = ({ role }) => {
         onClick={() => {
           dispatch("MY_PROFILES");
         }}
-        className={`${myProfiles ? styles.active : null}`}
+        className={`${pathname === "my-profiles" ? styles.active : null}`}
       >
         آگهی های من
       </Link>
@@ -62,11 +33,18 @@ const DashboardNavigation = ({ role }) => {
         onClick={() => {
           dispatch("ADD_PROFILE");
         }}
-        className={`${addProfile ? styles.active : null}`}
+        className={`${pathname === "add-profile" ? styles.active : null}`}
       >
         ثبت آگهی
       </Link>
-      {role === "ADMIN" ? <Link href="/admin">در انتظار تایید</Link> : null}
+      {role === "ADMIN" ? (
+        <Link
+          href="/admin"
+          className={`${pathname === "admin" ? styles.active : null}`}
+        >
+          در انتظار تایید
+        </Link>
+      ) : null}
     </>
   );
 };

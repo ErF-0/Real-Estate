@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 const AddProfilePage = ({ data }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+
   const initialProfileData = {
     title: "",
     description: "",
@@ -20,7 +21,7 @@ const AddProfilePage = ({ data }) => {
     price: "",
     location: "",
     realEstate: "",
-    constructionDate: new Date(),
+    constructionDate: "",
     category: "",
     rules: [],
     amenities: [],
@@ -55,7 +56,7 @@ const AddProfilePage = ({ data }) => {
       toast.error(data.error);
     } else {
       toast.success(data.message);
-      router.refresh();
+      setProfileData(initialProfileData);
     }
   };
   const editHandler = async () => {

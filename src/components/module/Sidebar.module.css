@@ -1,20 +1,39 @@
-.container {
+.sidebar {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  padding: 30px 15px;
+  border-radius: 10px;
+  box-shadow: var(--boxShadowColor) 0px 4px 15px;
+  margin-left: 40px;
+  width: 220px;
 }
-.container p {
+.sidebar p {
   display: flex;
   font-size: 1.2rem;
   font-weight: 400;
 }
 
-.container p svg {
+.sidebar p svg {
   margin-left: 5px;
   font-size: 1.3rem;
   color: var(--mainColor) !important;
 }
 
-.container a {
+.sidebar a {
   color: grey;
   margin: 5px;
+}
+
+@media only screen and (max-width: 1280px) {
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
 }

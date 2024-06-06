@@ -5,15 +5,6 @@
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: fit-content;
-  padding: 30px 15px;
-  border-radius: 10px;
-  box-shadow: var(--boxShadowColor) 0px 4px 15px;
-  margin-left: 40px;
-  width: 220px;
 }
 
 .main {
@@ -32,5 +23,17 @@
   height: 50px;
 }
 
-@media (max-width: 700px) {
+@media only screen and (max-width: 1280px) {
+  .sidebar {
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 480px) {
 }

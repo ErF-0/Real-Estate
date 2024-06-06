@@ -29,3 +29,21 @@
 .submit:hover {
   transform: scale(1.05);
 }
+
+@media only screen and (max-width: 1280px) {
+}
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 640px) {
+  .container h3,
+  .submit {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container h3,
+  .submit {
+    width: 100%;
+  }
+}

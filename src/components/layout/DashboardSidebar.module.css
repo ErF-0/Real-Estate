@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  justify-content: space-between;
   margin-top: 80px;
 }
 
@@ -14,6 +13,10 @@
   box-shadow: var(--boxShadowColor) 0px 4px 15px;
   margin-left: 40px;
   width: 220px;
+}
+.mobileMenu {
+  display: none;
+  margin-left: 0;
 }
 
 .sidebar svg {
@@ -56,14 +59,75 @@
 .sidebar .active:hover {
   color: #ffff;
 }
-
-.main {
-  width: 100%;
-}
-
 #role {
   color: grey;
   font-size: 1.1rem;
   font-weight: 500;
   margin-top: 5px;
+}
+.showMenu {
+  display: none;
+  height: fit-content;
+}
+.showMenu svg {
+  width: 24px;
+  height: 24px;
+}
+.showMenu p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.sidebar .closeMenuBtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.sidebar .closeMenuBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1280px) {
+}
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width: 640px) {
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .sidebar {
+    display: none;
+    box-shadow: none;
+  }
+  .showMenu {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 20;
+  }
+  .mobileMenu {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    z-index: 100;
+  }
+  .showMobileMenu {
+    right: 0;
+  }
 }

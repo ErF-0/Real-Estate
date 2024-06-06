@@ -4,9 +4,17 @@ import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 const CustomDatePicker = ({ profileData, setProfileData }) => {
   const changeHandler = (e) => {
-    const date = new Date(e);
-    setProfileData({ ...profileData, constructionDate: date });
+    const dateObject = new DateObject(e);
+    const year = dateObject.year;
+
+    setProfileData({ ...profileData, constructionDate: year });
   };
+  const dateObjectValue = new DateObject({
+    year: profileData.constructionDate,
+    month: 1,
+    day: 1,
+    calendar: persian,
+  });
   return (
     <div className={styles.container}>
       <p>سال ساخت</p>
@@ -16,9 +24,10 @@ const CustomDatePicker = ({ profileData, setProfileData }) => {
         locale={persian_fa}
         minDate="1300/1/1"
         maxDate={new DateObject({ calendar: persian })}
-        value={profileData.constructionDate}
+        value={dateObjectValue}
         onChange={changeHandler}
         calendarPosition="bottom-right"
+        onlyYearPicker
       />
     </div>
   );

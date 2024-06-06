@@ -1,16 +1,10 @@
 import Link from "next/link";
 import { HiFilter } from "react-icons/hi";
-import styles from "@/module/Sidebar.module.css";
 import { categories } from "@/constants/strings";
+import styles from "@/module/Sidebar.module.css";
 const Sidebar = () => {
-  const queries = [
-    { villa: "ویلا" },
-    { apartment: "آپارتمان" },
-    { store: "مغازه" },
-    { office: "دفتر" },
-  ];
   return (
-    <div className={styles.container}>
+    <aside className={styles.sidebar}>
       <p>
         <HiFilter />
         دسته بندی
@@ -24,7 +18,7 @@ const Sidebar = () => {
           {categories[item]}
         </Link>
       ))}
-    </div>
+    </aside>
   );
 };
 

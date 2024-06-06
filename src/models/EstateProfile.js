@@ -28,7 +28,7 @@ const profileSchema = new Schema(
       required: true,
     },
     constructionDate: {
-      type: Date,
+      type: Number,
       required: true,
     },
     category: {

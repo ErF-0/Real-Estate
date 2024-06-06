@@ -62,7 +62,7 @@ const ProfileDetailsPage = ({
           <p>{sp(price)} تومان</p>
           <p>
             <BiCalendarCheck />
-            {new Date(constructionDate).toLocaleDateString("fa-IR")}
+            {constructionDate}
           </p>
         </div>
       </aside>

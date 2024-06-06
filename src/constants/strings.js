@@ -16,4 +16,11 @@ const cities = [
 ];
 const services = ["خرید", "فروش", "رهن", "اجاره"];
 
-export { categories, cities, services };
+const sidebarTitles = {
+  dashboard: "داشبورد",
+  "my-profiles": "آگهی های من",
+  "add-profile": "ثبت آگهی",
+  admin: "در انتظار تایید",
+};
+
+export { categories, cities, services, sidebarTitles };

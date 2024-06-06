@@ -23,7 +23,7 @@ export async function POST(req) {
     }
     const hashedPassword = await hashPassword(password);
     const newUser = await EstateUser.create({
-      email,
+      email: email.toLowerCase(),
       password: hashedPassword,
     });
     return NextResponse.json(

@@ -17,7 +17,7 @@ export const authOptions = {
         const { email, password } = credentials;
         if (!email || !password)
           throw new Error("لطفا اطلاعات معتبر وارد کنید");
-        const user = await EstateUser.findOne({ email });
+        const user = await EstateUser.findOne({ email: email.toLowerCase() });
         if (!user) throw new Error("لطفا ابتدا ثبت نام کنید");
         const isValid = await verifyPassword(password, user.password);
         if (!isValid) throw new Error("ایمیل یا رمز عبور اشتباه است.");
